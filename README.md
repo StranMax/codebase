@@ -1,6 +1,17 @@
 # code
 R &amp; Python code
 
+Setup r packages:  
+```r
+pkgs <- c(
+)
+installed_pkgs <- library()$results[,1]
+uninst <- pkgs[!(pkgs %in% installed_pkgs)]
+if (length(uninst) > 0) install.packages(uninst)
+lapply(pkgs, library, character.only = TRUE)
+```
+
+`cut` function with pretty formatting:  
 ```r
 cut2 <- function (x, breaks, labels = NULL, include.lowest = FALSE, right = TRUE, 
                   dig.lab = 3L, ordered_result = FALSE, ...) 
